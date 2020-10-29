@@ -46,33 +46,33 @@ class _HomeState extends State<HomeScreen> {
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(Icons.home),
-              label: AppLocalization.of(context)
+              title: Text(AppLocalization.of(context)
                       .translate("bottom_navigation_label_home") ??
-                  "1"),
+                  "1")),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
-              icon: Icon(Icons.contact_support_outlined),
-              label: AppLocalization.of(context)
+              icon: Icon(Icons.gif),
+              title: Text(AppLocalization.of(context)
                       .translate("bottom_navigation_label_coupon") ??
-                  "2"),
+                  "2")),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(Icons.people),
-              label: AppLocalization.of(context)
+              title: Text(AppLocalization.of(context)
                       .translate("bottom_navigation_label_member") ??
-                  "3"),
+                  "3")),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
-              icon: Icon(Icons.qr_code),
-              label: AppLocalization.of(context)
+              icon: Icon(Icons.scanner),
+              title: Text(AppLocalization.of(context)
                       .translate("bottom_navigation_label_qr") ??
-                  "4"),
+                  "4")),
           BottomNavigationBarItem(
               backgroundColor: Colors.black,
               icon: Icon(Icons.info),
-              label: AppLocalization.of(context)
+              title: Text(AppLocalization.of(context)
                       .translate("bottom_navigation_label_new") ??
-                  "5")
+                  "5"))
         ],
       );
 

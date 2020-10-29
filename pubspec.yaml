@@ -70,6 +70,8 @@ flutter:
        - assets/icon_navigation_question_naire.png
        - assets/icon_navigation_youtube.png
        - assets/icon_oil_soba_custom.png
+       - assets/icon_topping_recommend.png
+       - assets/icon_navigation_online_store.png
        - assets/value/en.json
        - assets/value/vi.json
    #  - images/a_dot_ham.jpeg

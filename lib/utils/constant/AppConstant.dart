@@ -23,6 +23,8 @@ class AppConstant {
   static final iconQuestionNaire = "assets/icon_navigation_question_naire.png";
   static final iconYoutube = "assets/icon_navigation_youtube.png";
   static final iconAbuRaSoBa = "assets/icon_oil_soba_custom.png";
+  static final iconRequestTopping = "assets/icon_topping_recommend.png";
+  static final iconOnlineStore = "assets/icon_navigation_online_store.png";
   ///font
   static final fontBeBas = "Bebas";
   static final fontMyriad = "Myriad";

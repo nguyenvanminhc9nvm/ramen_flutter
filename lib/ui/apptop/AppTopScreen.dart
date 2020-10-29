@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/utils/constant/AppConstant.dart';
+import 'package:flutter_app/utils/localize/AppLocalizations.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 
@@ -30,28 +31,49 @@ class _AppTopState extends State<AppTopScreen> {
         ),
       );
 
-  Container _initViewSelectOptionStore() => Container(
-    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Expanded(
-          flex: 1,
-          child: Image(image: AssetImage(AppConstant.iconStore)),
+  Container _initViewSelectOptionStore(String firstImage, String secondImage) => Container(
+        margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              flex: 1,
+              child: Image(image: AssetImage(firstImage)),
+            ),
+            SizedBox(width: 10),
+            Expanded(
+              flex: 1,
+              child: Image(image: AssetImage(secondImage)),
+            ),
+          ],
         ),
-        SizedBox(width: 10),
-        Expanded(
-          flex: 1,
-          child: Image(image: AssetImage(AppConstant.iconMenu)),
-        ),
-      ],
-    ),
-  );
+      );
 
   Container _initViewOpenTakeout() => Container(
-        child: Image(image: AssetImage(AppConstant.iconSecond)),
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+        child: Image(image: AssetImage(AppConstant.iconTakeout)),
       );
+
+  Container _initViewOpenAbuRaSoBa() => Container(
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+    child: Image(image: AssetImage(AppConstant.iconAbuRaSoBa)),
+  );
+
+  Container _initViewOpenRequestTopping() => Container(
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+    child: Image(image: AssetImage(AppConstant.iconRequestTopping)),
+  );
+
+  Container _initViewOpenYoutube() => Container(
+    margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+    child: Image(image: AssetImage(AppConstant.iconYoutube)),
+  );
+
+  Container _initViewOpenOnline() => Container(
+    margin: EdgeInsets.fromLTRB(10, 10, 0, 0),
+    child: Image(image: AssetImage(AppConstant.iconOnlineStore)),
+  );
 
   Container _initViewInfoRank() => Container(
         child: Column(
@@ -85,6 +107,7 @@ class _AppTopState extends State<AppTopScreen> {
     ScreenUtil.init(context,
         designSize: Size(750, 1334), allowFontScaling: false);
     return Scaffold(
+      appBar: AppBar(title: Text("Home")),
       body: Container(
         child: Align(
           child: SafeArea(
@@ -98,8 +121,62 @@ class _AppTopState extends State<AppTopScreen> {
                   aspectRatio: 1 / 1,
                   child: _initViewPagerProductLimited(),
                 ),
-                _initViewSelectOptionStore(),
-                _initViewOpenTakeout()
+                _initViewSelectOptionStore(
+                  AppConstant.iconMenu,
+                  AppConstant.iconStore
+                ),
+                _initViewOpenTakeout(),
+                // _initViewInfoRank(),
+                 _initViewOpenAbuRaSoBa(),
+                 _initViewOpenRequestTopping(),
+                 _initViewOpenYoutube(),
+                 _initViewOpenOnline(),
+                 _initViewSelectOptionStore(
+                     AppConstant.iconQuestionNaire,
+                     AppConstant.iconOfficeSite
+                 ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: FlatButton(
+                          color: Colors.black,
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(50)),
+                          onPressed: () {
+
+                          },
+                          child: Text(
+                            AppLocalization.of(context)
+                                .translate("register_label_btn"),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10),
+                      Expanded(
+                        flex: 1,
+                        child: FlatButton(
+                          color: Colors.black,
+                          shape: RoundedRectangleBorder(
+                              side: BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(50)),
+                          onPressed: () {
+
+                          },
+                          child: Text(
+                            AppLocalization.of(context)
+                                .translate("register_label_btn"),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
